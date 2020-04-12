@@ -1,13 +1,8 @@
-﻿using tabuleiro;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using tabuleiro;
 using xadrez;
 
-namespace tabuleiro
-
+namespace xadrez_console
 {
     class Program
     {
@@ -22,13 +17,20 @@ namespace tabuleiro
                 {
 
                     Console.Clear();
-                    xadrez_console.Tela.imprimirTabuleiro(partida.tab);
+                    Tela.imprimirTabuleiro(partida.tab);
 
                     Console.WriteLine();
                     Console.Write("Origem: ");
-                    Posicao origem = xadrez_console.Tela.lerPosicaoXadrez().toPosicao();
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                    Console.WriteLine();
                     Console.Write("Destino: ");
-                    Posicao destino = xadrez_console.Tela.lerPosicaoXadrez().toPosicao();
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
                     partida.executaMovimento(origem, destino);
                 }
@@ -40,8 +42,6 @@ namespace tabuleiro
             }
 
             Console.ReadLine();
-
         }
-
     }
 }
