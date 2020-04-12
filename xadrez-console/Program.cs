@@ -16,15 +16,23 @@ namespace tabuleiro
 
             try
             {
-                Tabuleiro tab = new Tabuleiro(8, 8);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 2));
+                while (!partida.terminada)
+                {
 
-                tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(3, 5));
+                    Console.Clear();
+                    xadrez_console.Tela.imprimirTabuleiro(partida.tab);
 
-                xadrez_console.Tela.imprimirTabuleiro(tab);
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Posicao origem = xadrez_console.Tela.lerPosicaoXadrez().toPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = xadrez_console.Tela.lerPosicaoXadrez().toPosicao();
+
+                    partida.executaMovimento(origem, destino);
+                }
+
             }
             catch (TabuleiroException e)
             {
