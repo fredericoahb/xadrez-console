@@ -1,3 +1,7 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/fredericoahb/xadrez-console)
+![GitHub language count](https://img.shields.io/github/languages/count/fredericoahb/xadrez-console)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fredericoahb/xadrez-console)
+
 # Chess game
 
 Application written in C# with good software engineering practices using Multitier architecture.
