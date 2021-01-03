@@ -17,5 +17,6 @@ Chess tier - Intelligence tier where the rules of the chess game are implemented
 
 Application tier - console mode application that will consume the other two tiers, interact with the user and present the game.
 
-##Chess System Design
+## Chess System Design
+
 ![Design 1](https://github.com/fredericoahb/chess-system-java/blob/master/chess-system-design.png)
